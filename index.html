@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Content Generator</title>
+    <style>
+ 			#copyPopup {
+            visibility: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+        /* CSS cho cột nội dung */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: auto;
+            margin: 0 auto;
+        }
+        .content-section {
+            flex: 0 0 20%; /* Chiếm 30% chiều rộng của cột */
+            margin: 5px 0;
+            font-size: 11.5pt;
+        }
+.btns {
+    animation: scale 4s linear infinite;
+    -webkit-animation: scale 4s infinite;
+    position: relative;
+    width: 50%;height:60px;font-size:25pt;
+    border-radius: 25px;
+    background-image:url('hinh-nen-7-sac-cau-vong-dep-nhat_083558831.jpg');
+    color:white;background-size:105%;
+}
+@-webkit-keyframes c_location_rotate{0%{transform:scale(1)}
+12.5%{transform:scale(1.1)}
+25%{transform:scale(1)}
+37.5%{transform:scale(1.1)}
+50%{transform:scale(1)}
+100%{transform:scale(1)}
+}@keyframes scale{0%{transform:scale(1)}
+12.5%{transform:scale(1.1)}
+25%{transform:scale(1)}
+37.5%{transform:scale(1.1)}
+50%{transform:scale(1)}
+100%{transform:scale(1)}
+}
+.custom-btn {
+
+  color: #fff;
+
+  background: transparent;
+  font-size: 18pt;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+
+}
+
+/*Hiệu ứng  12 */
+
+.btn-12{
+
+  border:none;
+
+  box-shadow: none;
+
+  width: 100%;
+
+  line-height: 42px;
+margin:5px;
+display: flex; justify-content: center;
+}
+
+.btn-12 span {
+
+  background: rgb(0,172,238);
+
+background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+
+  display: block;font-weight:bold;
+
+  position: absolute;
+
+  width: 50%;
+
+
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+
+   7px 7px 20px 0px rgba(0,0,0,.1),
+
+   4px 4px 5px 0px rgba(0,0,0,.1);
+
+  border-radius: 5px;
+
+  margin:0;
+
+  text-align: center;
+
+  -webkit-box-sizing: border-box;
+
+  -moz-box-sizing: border-box;
+
+  box-sizing: border-box;
+
+  -webkit-transition: all .3s;
+
+  transition: all .3s;
+
+}
+
+.btn-12 span:nth-child(1) {
+
+  box-shadow:
+
+   -7px -7px 20px 0px #fff9,
+
+   -4px -4px 5px 0px #fff9,
+
+   7px 7px 20px 0px #0002,
+
+   4px 4px 5px 0px #0001;
+
+  -webkit-transform: rotateX(90deg);
+
+  -moz-transform: rotateX(90deg);
+
+  transform: rotateX(90deg);
+
+  -webkit-transform-origin: 50% 50% -20px;
+
+  -moz-transform-origin: 50% 50% -20px;
+
+  transform-origin: 50% 50% -20px;
+
+}
+
+.btn-12 span:nth-child(2) {
+
+  -webkit-transform: rotateX(0deg);
+
+  -moz-transform: rotateX(0deg);
+
+  transform: rotateX(0deg);
+
+  -webkit-transform-origin: 50% 50% -20px;
+
+  -moz-transform-origin: 50% 50% -20px;
+
+  transform-origin: 50% 50% -20px;
+
+}
+
+.btn-12:hover span:nth-child(1) {
+
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+
+   7px 7px 20px 0px rgba(0,0,0,.1),
+
+   4px 4px 5px 0px rgba(0,0,0,.1);
+
+  -webkit-transform: rotateX(0deg);
+
+  -moz-transform: rotateX(0deg);
+
+  transform: rotateX(0deg);
+
+}
+
+.btn-12:hover span:nth-child(2) {
+
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+
+   7px 7px 20px 0px rgba(0,0,0,.1),
+
+   4px 4px 5px 0px rgba(0,0,0,.1);
+
+ color: transparent;
+
+  -webkit-transform: rotateX(-90deg);
+
+  -moz-transform: rotateX(-90deg);
+
+  transform: rotateX(-90deg);
+
+}
+    .text {background:#FFFF00;animation: blink 1.5s infinite;}
+         @-webkit-keyframes blink {
+  25% {
+    color: #f00;
+    text-shadow: 1px 1px #fff;
+}
+
+50% {
+    color: #00f;
+    text-shadow: 1px 1px #fff;
+}
+75% {
+    color: #f00;
+    text-shadow: 1px 1px #fff;
+}
+100% {
+    color: #000;
+    text-shadow: 1px 1px #fff;
+}
+}
+
+.text99 {width: fit-content;background: radial-gradient(circle closest-side, #ff0000, #ffff42 100%, #ff0000) right / calc(300% - 1em) 1500%;animation: l24 5s infinite alternate linear;}
+    @-webkit-keyframes l241 {
+
+    100% {
+    background-position: left;
+}
+    }
+    
+    .bgg{background-image: url(https://img.bjhav.cn/442250/img/saobang.gif);background-size: 100%;}
+    </style>
+</head>
+<body class="bggg">
+            <button class="text99" style="width: 100%;border-radius:20px;height:80px;font-size:25.5pt;color: #000;"><span class="text">Tool 文章 Made By Daniel Hacker</span></button>
+
+    <div class="container">
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">琴棋书画</span>: <span id="randomContent"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">五行中特</span>: <span id="randomContent1"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent1()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent1')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">春夏秋冬</span>: <span id="randomContent2"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent2()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent2')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">东西南北</span>: <span id="randomContent3"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent3()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent3')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">梅兰竹菊</span>: <span id="randomContent99"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent99()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent99')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">五段中特</span>: <span id="randomContent4"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent4()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent4')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">成语平特</span>: <span id="randomContent5"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent5()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent5')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">双波中特</span>: <span id="randomContent6"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent6()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent6')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">风雨雷电</span>: <span id="randomContent7"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent7()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent7')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">三头中特</span>: <span id="randomContent8"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent8()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent8')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">绝杀三合</span>: <span id="randomContent13"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent13()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent13')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">6尾</span>: <span id="randomNumbers"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateUniqueRandomNumbers()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomNumbers')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">7尾</span>: <span id="randomNumbers1"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateUniqueRandomNumbers1()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomNumbers1')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">三头<span lang="zh-cn"> </span></span>: <span id="randomNumbers2"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateUniqueRandomNumbers2()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomNumbers2')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">5尾<span lang="zh-cn"> </span></span>: <span id="randomNumbers3"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateUniqueRandomNumbers3()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomNumbers3')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">6尾<span lang="zh-cn"> </span></span>: <span id="randomNumbers4"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateUniqueRandomNumbers4()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomNumbers4')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">7尾<span lang="zh-cn"> </span></span>: <span id="randomNumbers5"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateUniqueRandomNumbers5()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomNumbers5')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">6肖</span>: <span id="randomContent9"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent9()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent9')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">7肖</span>: <span id="randomContent10"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent10()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent10')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">8肖</span>: <span id="randomContent11"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent11()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent11')">Copy</button>
+        </div>
+        <div class="content-section">
+            <h2><span style="color: #ff0000;">9肖</span>: <span id="randomContent12"></span></h2>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="generateContent12()">Generate</button>
+            <button style="border-radius:20px;color: #FFFFFF;font-weight:700;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)" onclick="copyContent('randomContent12')">Copy</button>
+        </div>
+    </div>
+<hr>
+    <!-- Generate All Button -->
+<div style="text-align: center;">
+    <button class="custom-btn btn-12" onclick="generateAll()"><span>Click!</span><span>Generate All</span></button>
+</div>
+    <!-- Popup notification -->
+    <div id="copyPopup">Đã copy vào clipboard!</div>
+
+    <script>
+        function generateContent() {
+            const characters = ["琴", "棋", "书", "画"];
+            document.getElementById("randomContent").innerText = getRandomElements(characters, 3).join('');
+        }
+
+        function generateContent1() {
+            const characters = ["金", "木", "土", "火", "水"];
+            document.getElementById("randomContent1").innerText = getRandomElements(characters, 3).join('');
+        }
+
+        function generateContent2() {
+            const characters = ["春", "夏", "秋", "冬"];
+            document.getElementById("randomContent2").innerText = getRandomElements(characters, 3).join('');
+        }
+
+        function generateContent3() {
+            const characters = ["东", "西", "南", "北"];
+            document.getElementById("randomContent3").innerText = getRandomElements(characters, 3).join('');
+        }
+
+        function generateContent99() {
+            const characters = ["梅", "兰", "竹", "菊"];
+            document.getElementById("randomContent99").innerText = getRandomElements(characters, 3).join('');
+        }
+
+		function generateContent4() {
+   			 const characters = ["1段", "2段", "3段", "4段", "5段", "6段", "7段"];
+    		 const result = getRandomElements(characters, 5).sort((a, b) => parseInt(a) - parseInt(b));
+   			 document.getElementById("randomContent4").innerText = result.join(' ');
+		}
+
+        function generateContent5() {
+            const characters = ["城狐社鼠", "虫臂鼠肝", "掉头鼠窜", "奉头鼠窜", "孤雏腐鼠", "猫鼠同乳", "捧头鼠窜", "雀目鼠步", "牛蹄之鱼", "牛羊勿践", "牛衣岁月", "牛农对泣", "茧丝牛毛", "鸡口牛后", "对牛弹琴", "带牛佩犊", "藏龙卧虎", "饿虎扑食", "放虎归山", "放虎自卫", "狼飡虎咽", "狼吞虎噬", "麟角虎翅", "龙蹲虎踞", "见兔顾犬", "狐死兔泣", "惊猿脱兔", "兔起鹘落", "兔死狐悲", "获兔烹狗", "目兔顾犬", "兔角龟毛", "黄龙痛饮", "画龙点晴", "虎据龙蟠", "鹤骨龙筋", "虎斗龙争", "龟龙鳞凤", "风虎云龙", "车水马龙", "春蚓秋蛇", "斗折蛇行", "灵蛇之珠", "龙蛇飞动", "牛鬼蛇神", "蛇欲吞象", "握蛇骑虎", "养虺成蛇", "士饱马腾", "司马青衫", "童牛角马", "单枪匹马", "车马盈门", "伯乐相马", "弊车羸马", "鞍马劳困", "问羊知马", "羊入虎群", "以羊易牛", "鸟道羊肠", "昌歜羊枣", "狼羊同饲", "卖狗悬羊", "瘦羊博士", "弄鬼掉猴", "猴年马月", "杀鸡哧猴", "轩鹤冠猴", "尖嘴猴腮", "沐猴而冠", "猿猴取月", "沐猴衣冠", "范张鸡黍", "鹤发鸡皮", "鸡虫得失", "鸡骨支床", "小肚鸡肠", "土鸡瓦犬", "只鸡斗酒", "卓立鸡群", "斗鸡走狗", "狗盗鸡鸣", "狗肺狼心", "狗拿耗子", "狗头鼠脑", "狗逮老鼠", "鸡飞狗跳", "驴鸣狗吠", "牧猪奴戏", "猪卑狗险", "泥猪疥狗", "泥猪癞狗", "泥猪瓦狗", "指猪骂狗", "猪朋狗友", "一龙一猪"];
+            document.getElementById("randomContent5").innerText = getRandomElements(characters, 1).join('');
+        }
+
+        function generateContent6() {
+            const characters = ["红波", "蓝波", "绿波"];
+            document.getElementById("randomContent6").innerText = getRandomElements(characters, 2).join('');
+        }
+
+        function generateContent7() {
+            const characters = ["风", "雨", "雷", "电"];
+            document.getElementById("randomContent7").innerText = getRandomElements(characters, 3).join('');
+        }
+        
+        function generateContent8() {
+            const characters = ["0头", "1头", "2头", "3头", "4头"];
+   			const result = getRandomElements(characters, 3).sort((a, b) => parseInt(a) - parseInt(b));
+		    document.getElementById("randomContent8").innerText = result.join('');
+}
+
+        function generateContent9() {
+            const characters = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"];
+            document.getElementById("randomContent9").innerText = getRandomElements(characters, 6).join('');
+        }
+
+        function generateContent10() {
+            const characters = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"];
+            document.getElementById("randomContent10").innerText = getRandomElements(characters, 7).join('');
+        }
+
+        function generateContent11() {
+            const characters = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"];
+            document.getElementById("randomContent11").innerText = getRandomElements(characters, 8).join('');
+        }
+        
+        function generateContent12() {
+            const characters = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"];
+            document.getElementById("randomContent12").innerText = getRandomElements(characters, 9).join('');
+        }
+        
+        function generateContent13() {
+            const characters = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+            const result = getRandomElements(characters, 3).sort((a, b) => parseInt(a) - parseInt(b))
+            document.getElementById("randomContent13").innerText = result.join('.')+  "合";
+        }
+
+		function generateUniqueRandomNumbers() {
+    		const result = getUniqueRandomNumbers(6, 10).sort((a, b) => a - b);
+    		document.getElementById("randomNumbers").innerText = result.join('-');
+		}
+
+		function generateUniqueRandomNumbers1() {
+    		const result = getUniqueRandomNumbers(7, 10).sort((a, b) => a - b);
+    		document.getElementById("randomNumbers1").innerText = result.join('-');
+		}
+
+        function generateUniqueRandomNumbers2() {
+    		const result = getUniqueRandomNumbers(3, 5).sort((a, b) => a - b);
+    		document.getElementById("randomNumbers2").innerText = result.join('-');
+		}
+        
+		function generateUniqueRandomNumbers3() {
+    		const result = getUniqueRandomNumbers(5, 10).sort((a, b) => a - b);
+    		document.getElementById("randomNumbers3").innerText = result.join('');
+		}
+        
+		function generateUniqueRandomNumbers4() {
+    		const result = getUniqueRandomNumbers(6, 10).sort((a, b) => a - b);
+    		document.getElementById("randomNumbers4").innerText = result.join('');
+		}
+        
+		function generateUniqueRandomNumbers5() {
+    		const result = getUniqueRandomNumbers(7, 10).sort((a, b) => a - b);
+    		document.getElementById("randomNumbers5").innerText = result.join('');
+		}
+        
+        function getRandomElements(arr, count) {
+            const selected = new Set();
+            while (selected.size < count) {
+                const randomIndex = Math.floor(Math.random() * arr.length);
+                selected.add(arr[randomIndex]);
+            }
+            return Array.from(selected);
+        }
+
+        function getUniqueRandomNumbers(count, max) {
+            const numbers = new Set();
+            while (numbers.size < count) {
+                numbers.add(Math.floor(Math.random() * max));
+            }
+            return Array.from(numbers);
+        }
+
+        function copyContent(elementId) {
+            const content = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(content).then(showCopyPopup)
+                .catch(err => console.error('Failed to copy: ', err));
+        }
+
+        function showCopyPopup() {
+            const popup = document.getElementById("copyPopup");
+            popup.style.visibility = "visible";
+            setTimeout(() => { popup.style.visibility = "hidden"; }, 2000);
+        }
+
+        function generateAll() {
+            generateContent();
+            generateContent1();
+            generateContent2();
+            generateContent3();
+            generateContent4();
+            generateContent5();
+            generateContent6();
+            generateContent7();
+            generateContent8();
+            generateContent9();
+            generateContent10();
+            generateContent11();
+            generateContent12();
+            generateContent13();
+            generateContent99();
+            generateUniqueRandomNumbers();
+            generateUniqueRandomNumbers1();
+            generateUniqueRandomNumbers2();
+            generateUniqueRandomNumbers3();
+            generateUniqueRandomNumbers4();
+            generateUniqueRandomNumbers5();
+        }
+    </script>
+</body>
+</html>
